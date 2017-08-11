@@ -1,0 +1,19 @@
+.nav
+  = link_to root_path do 
+    .logo
+      .dot
+  - if creator_signed_in?  
+    .dropdown
+      .profileimg    
+        = image_tag current_creator.profile.url(:small)
+      %p.creatorname
+        = current_creator.name
+      .dropdown-content
+        = link_to('Logout', destroy_creator_session_path, method: :delete)
+        = link_to 'Settings', edit_creator_registration_path
+
+  - else
+    .inline
+      = link_to "Sign Up", new_creator_registration_path, class: 'button', id:'logout'
+    .inline
+      = link_to "Log In", new_creator_session_path, class: 'button', id:'profile' 

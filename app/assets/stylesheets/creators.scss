@@ -17,7 +17,7 @@
     text-align: center;
     position: absolute;
     left: 50%;
-    top:35%;
+    top:45%;
     transform: translate(-50%, -50%);
     padding-bottom:100px;
     padding-to:100px;
@@ -25,7 +25,8 @@
         border-radius:400px;
     }
     .about{
-        max-width:100%;
+        max-width:80%;
+        margin:0 auto;
     }
     h1{
         color:#696969;
@@ -33,7 +34,7 @@
         margin-top:50px;
     }
     .count{
-        padding-top:100px;
+        padding-top:50px;
         font-size:25px;
         color:#696969;
         font-weight:700;
@@ -49,3 +50,25 @@
 }
 
 
+.show{
+  #posts{
+    position: absolute;
+    top:60%;  
+    left:10%;
+  }
+}
+
+.wrapper3{
+    img{
+        border-radius:400px;
+    }
+    #creatorname{
+        color:gray;
+        text-decoration:none;
+        font-size:30px;
+        text-align:center;
+    }
+    .dropdown{
+        background:transparent;
+    }
+}

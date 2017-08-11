@@ -1,3 +1,5 @@
+= render 'layouts/nav'
+
 
 .profile
   .inline
@@ -32,19 +34,19 @@
 %br/
 %br/
 
-
-#posts
-  - @kapp.each do |kapp|
-    .post
-      .post_image
-        = link_to (image_tag kapp.thumbnail.url(:medium)), kapp
-      .post_content
-        .title
-          %h2= link_to kapp.title, kapp
-          %br/
-        %p.username
-          Published by
-          = link_to kapp.creator.name, kapp.creator
-          %br/
-          = time_ago_in_words(kapp.created_at)
-          ago
+.show
+  #posts
+    - @kapp.each do |kapp|
+      .post
+        .post_image
+          = link_to (image_tag kapp.thumbnail.url(:medium)), kapp
+        .post_content
+          .title
+            %h2= link_to kapp.title, kapp
+            %br/
+          %p.username
+            Published by
+            = link_to kapp.creator.name, kapp.creator
+            %br/
+            = time_ago_in_words(kapp.created_at)
+            ago

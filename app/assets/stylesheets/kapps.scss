@@ -1,10 +1,12 @@
+$maincolour:#00E2FF;
+$secondcolour:gray;
 
 #posts {
     width:80%;
     float:right;
     padding-top:100px;
 	.post {
-		background: #ffffff;
+		background: transparent;
 		width: 30%;
 		float: left;
 		margin: 1rem 1.5%;
@@ -138,4 +140,28 @@
 
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
+}
+
+#subm{
+	padding:20px;
+	border-radius:400px;
+}
+
+.dropdown{
+	background:red;
+}
+
+.areac{
+  outline: none;
+	background: transparent;
+	color:$maincolour;
+	text-decoration:none;
+	border:0;
+	font-size:20px;
+	width:50%;
+	border-radius: 1.5em;
+	&:hover {
+		color: $maincolour;
+
+	}
 }

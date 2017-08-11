@@ -1,0 +1,32 @@
+= render 'layouts/nav'
+%br/
+%br/
+%br/
+%br/
+.wrapper
+  %h1.colour Sign Up
+  %br/
+  = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| 
+    = f.error_notification
+
+    = f.input :email, input_html: { class: 'area2' }, label: false, placeholder: "Email"
+    %br/
+    = f.input :name, input_html: { class: 'area2' }, label: false, placeholder: "Name"
+    %br/
+    = f.input :phone, input_html: { class: 'area2' }, label: false, placeholder: "Phone Number"
+    %br/
+    = f.input :password, input_html: { class: 'area2' }, label: false, placeholder: "Password"
+    %br/
+    = f.input :password_confirmation, input_html: { class: 'area2' }, label: false, placeholder: "Password confirmation"
+    %br/
+    .imgbutton
+      = f.input :profile, as: :file, input_html: { hidden: true,class: 'imgbutton' }, label: 'Upload Avatar'
+    %br/
+    %br/
+    %br/
+    = f.button :submit , "Sign up", class: 'button3' 
+    %br/
+    %br/
+    %br/
+
+    = render "creators/shared/links" 

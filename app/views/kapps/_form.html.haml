@@ -1,7 +1,17 @@
 = simple_form_for @kapp do |f|
-  = f.input :thumbnail, as: :file
-  = f.input :title
-  = f.input :description
-  = f.collection_select :category_id, Category.all, :id, :name, {prompt: "Choose a Category"}
+  %br/
+  = f.input :title, input_html: { class: 'area' }, label: false, placeholder: "Title"
+  %br/
+  = f.input :description, input_html: { class: 'lgarea' }, label: false, placeholder: "Description"
+  %br/
+  %br/
+  = f.collection_select :category_id, Category.all, :id, :name, {prompt: "Choose a Category"}, class: 'areac' 
+  %br/
+  %br/
+  %br/
+  .imgbutton
+    = f.input :thumbnail, as: :file, input_html: { hidden: true,class: 'imgbutton' }, label: 'Upload Thumbnail'
+  %br/
+  %br/
   
-  = f.button :submit
+  = f.button :submit,"Create", class: 'button3', id:'subm'

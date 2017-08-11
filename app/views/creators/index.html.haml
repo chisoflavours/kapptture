@@ -1,5 +1,13 @@
-- @creators.each do |creator|
-  = link_to creator.name, creator
-  = image_tag creator.profile.url(:medium) 
+= render 'layouts/nav'
+.wrapper3
+  %h1 All Creators
+  - @creators.each do |creator|
+    %br/
+    %br/
+    .dropdown
+      = image_tag creator.profile.url(:medium)
+      .dropdown-content
+        = link_to creator.name, creator, id: 'creatorname'
+
   
-= link_to('Logout', destroy_creator_session_path, method: :delete) 
+ 
