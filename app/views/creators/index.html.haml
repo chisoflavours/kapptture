@@ -1,0 +1,5 @@
+- @creators.each do |creator|
+  = link_to creator.name, creator
+  = image_tag creator.profile.url(:medium) 
+  
+= link_to('Logout', destroy_creator_session_path, method: :delete) 

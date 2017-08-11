@@ -1,0 +1,7 @@
+= simple_form_for @kapp do |f|
+  = f.input :thumbnail, as: :file
+  = f.input :title
+  = f.input :description
+  = f.collection_select :category_id, Category.all, :id, :name, {prompt: "Choose a Category"}
+  
+  = f.button :submit

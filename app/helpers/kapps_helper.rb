@@ -1,0 +1,2 @@
+module KappsHelper
+end

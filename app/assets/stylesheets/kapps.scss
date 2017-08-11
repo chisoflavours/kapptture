@@ -1,0 +1,141 @@
+
+#posts {
+    width:80%;
+    float:right;
+    padding-top:100px;
+	.post {
+		background: #ffffff;
+		width: 30%;
+		float: left;
+		margin: 1rem 1.5%;
+		border: 0px solid #E4E4E4;
+		border-radius: 0.3rem;
+		margin-bottom:50px;
+		.post_image {
+			height: 300px;
+			overflow: hidden;
+			img {
+				width: 80%;
+				
+			}
+		}
+		.post_content {
+		    .username {
+			  float: left;
+			  color:gray;
+			  margin-bottom:20px;
+			  margin-top:5px;
+			  a{
+			  	color:gray;
+			  	text-decoration:none;
+			  	&:hover{
+			  		color:#333233;;
+			  	}
+			  }
+			}
+			h2 {
+				margin: 0;
+				font-weight: 100;
+				margin-top:0rem;
+				font-size: 1.25rem;
+				a {
+					text-decoration: none;
+					color: #333233;
+					&:hover {
+						color: #00E2FF;
+					}
+				}
+			}
+			.data {
+				padding: .75rem 5%;
+				color: #969696;
+				.username, .buttons {
+					margin: 0;
+					font-size: .8rem;
+				}
+				.buttons {
+					float: right;
+					span {
+						margin-left: .5rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+.sidenav{
+    width:15%;
+    float:left;
+    height:100vh;
+    left:0;
+    position:fixed;
+    top:20%;
+    li{
+        list-style-type:none;
+        color:gray;
+        margin-bottom:20px;
+        font-size:20px;
+        margin-left:10px;
+        letter-spacing:1px;
+        font-weight:100;
+    }
+    .li{
+        list-style-type:none;
+        color:gray;
+        margin-bottom:20px;
+        font-size:20px;
+        margin-left:10px;
+        letter-spacing:1px;
+        font-weight:100;
+        text-decoration:none;
+    }
+}
+
+.up{
+	padding-top:100px;
+}
+
+.category{
+	color:#00E2FF;
+	text-decoration:none;
+    font-size:17px;
+}
+
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 250px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    float:right;
+	position: absolute;
+    top:5%;
+    right: 3%;
+    position:fixed;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}

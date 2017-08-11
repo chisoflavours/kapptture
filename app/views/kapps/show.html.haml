@@ -1,0 +1,23 @@
+%h1= @kapp.title
+%p= @kapp.description
+
+%p
+  = @kapp.get_upvotes.size
+  Likes
+%p
+  = @kapp.get_downvotes.size
+  Dislikes
+  
+= link_to "Like" ,like_kapp_path(@kapp), method: :get
+= link_to "Dislike", dislike_kapp_path(@kapp), method: :get
+%p= @kapp.creator.name
+= image_tag @kapp.creator.profile.url(:small)
+
+%h2= pluralize(@kapp.comments.count, "Feedback")
+- @comments.each do |comment|
+  %p= comment.creator.name
+  %p= comment.content
+  
+= render 'comments/form'  
+= link_to "edit", edit_kapp_path(@kapp)
+= link_to "delete", kapp_path(@kapp), method: :delete, data: { confirm: "Are you sure ?"}

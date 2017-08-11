@@ -1,0 +1,53 @@
+.nav
+  = link_to root_path do 
+    .logo
+      .dot
+  - if creator_signed_in?  
+    .dropdown
+      .profileimg    
+        = image_tag current_creator.profile.url(:small)
+      %p.creatorname
+        = current_creator.name
+      .dropdown-content
+        = link_to('Logout', destroy_creator_session_path, method: :delete)
+        = link_to 'Settings', edit_creator_registration_path
+
+  - else
+    .inline
+      = link_to "Sign Up", new_creator_registration_path, class: 'button', id:'logout'
+    .inline
+      = link_to "Log In", new_creator_session_path, class: 'button', id:'profile' 
+     
+.sidenav
+  %ul
+    %li
+      = link_to "All", root_path, class: 'li'
+    - Category.all.each do |category|  
+      %li 
+        = link_to category.name, kapps_path(category: category.name), class: 'li'
+        
+
+
+.up
+  #posts
+    - @kapp.each do |kapp|
+      .post
+        .post_image
+          = link_to (image_tag kapp.thumbnail.url(:medium)), kapp
+        .post_content
+          .title
+            %h2= link_to kapp.title, kapp
+            %br/
+          = link_to kapp.category.name, kapps_path(category: kapp.category.name), class: 'category'
+          %br/
+          %br/
+          %p.username
+            Published by
+            = link_to kapp.creator.name, kapp.creator
+            %br/
+            = time_ago_in_words(kapp.created_at)
+            ago
+
+- if @kapp.blank?
+  .wrapper
+    %h2.colour.center There are no Kapps in this category

@@ -1,0 +1,200 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+$maincolour:#00E2FF;
+$secondcolour:gray;
+
+body{
+  font-family: 'Open Sans', sans-serif;
+  margin:0;
+}
+
+
+/*
+    height: 100vh;
+    width: 100%;
+    img{
+  border-radius: 400px;
+}
+
+*/    
+
+.hidden{
+  display:none;
+}
+
+.wrapper{
+  width: 40%;
+	margin: 0 auto;
+	margin-top:100px;
+	h1{
+	    margin-top:70px;
+	    text-transform:uppercase;
+	    font-size:30px;
+	    color:gray;
+	}
+}
+
+.wrapper2{
+  width: 58%;
+	margin: 0 auto;
+	margin-top:100px;
+	h1{
+	    margin-top:70px;
+	    text-transform:uppercase;
+	    font-size:30px;
+	    color:gray;
+	}
+}
+
+/* Variables */
+
+
+.inline{
+	display:inline-block;
+}
+
+.colour{
+  color:$secondcolour;
+}
+
+.center{
+  text-align:center;
+}
+
+.uppercase{
+  text-transform:uppercase;
+}
+
+.hr{
+  width:30px;
+  border:2px solid gray;
+  float:left;
+}
+
+.p{
+  text-transform:uppercase;
+  color:red;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    margin:0;
+    font-weight: 100;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 100;
+}
+
+
+
+
+.button {
+	outline: none;
+	background: transparent;
+	color:$maincolour;
+	text-decoration:none;
+	border: 1px solid $maincolour;
+	padding: .7em 1.5em;
+	border-radius: 1.5em;
+	&:hover {
+		border: 1px solid $secondcolour;
+		color: $secondcolour;
+
+	}
+}
+
+.button2 {
+	outline: none;
+	background: transparent;
+	color:#ffffff;
+	text-decoration:none;
+	border: 1px solid #ffffff;
+	padding: .7em 1.5em;
+	border-radius: 1.5em;
+	&:hover {
+		border: 1px solid #000000;
+		color: #000000;
+
+	}
+}
+
+.logo{
+  background: transparent;
+  height: 40px;
+  width: 40px;
+  border: 5px solid #6CE9FF;
+  border-radius: 17px;
+  position: absolute;
+  top:5%;
+  left: 3%;
+  position:fixed;
+  .dot{
+    background: #6CE9FF;
+    height: 10px;
+    width: 10px;
+    border-radius: 100px;
+    position: absolute;
+    left: 35%;
+    top:40%;
+  }
+}
+
+
+.profileimg{
+	float:right;
+	position: absolute;
+    top:5%;
+    right: 3%;
+    position:fixed;
+	img{
+		border-radius:400px;
+	}
+}
+
+.creatorname{
+  float:right;
+  position: absolute;
+  top:5%;
+  right: 8%;
+  position:fixed;
+}
+
+
+.alert {
+  padding: 20px;
+  background-color:  #4CAF50;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.6s;
+  margin-bottom: 15px;
+  .closebtn:hover {
+    color: black;
+  }
+
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+}

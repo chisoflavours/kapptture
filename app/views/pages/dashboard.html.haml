@@ -1,0 +1,42 @@
+.logo
+  .dot
+
+.inline
+  = link_to('Logout', destroy_creator_session_path, method: :delete, class: 'button', id:'logout')
+.inline  
+  = link_to 'Profile', edit_creator_registration_path, class: 'button', id:'profile'  
+.inline  
+  = link_to 'New Kapp', new_kapp_path, class: 'button', id:'new'
+
+.wrapper2
+  %h1
+    #{current_creator.name} dashboard
+  %hr.hr
+  - if @kapp.blank?
+    %h2.colour.top You have no kapps why not create one ?
+#posts
+  - @kapp.each do |kapp|
+    .post
+      .post_image
+        = link_to (image_tag kapp.thumbnail.url(:medium)), kapp
+      .post_content
+        .title
+          %h2= link_to kapp.title, kapp
+          %br/
+          = time_ago_in_words(kapp.created_at)
+          ago 
+
+  .stats
+    %h1.colour.uppercase Stats
+    %hr.long
+    %br/
+    %br/
+    %h2.colour
+      Joined #{current_creator.created_at}
+    %h2.colour
+      You have #{@kapp.count} kapps
+      
+
+
+
+
