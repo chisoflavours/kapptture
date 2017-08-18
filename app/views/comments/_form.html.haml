@@ -1,3 +1,7 @@
 = simple_form_for([@kapp, @kapp.comments.build]) do |f|
-  = f.input :content, label: "Reply to thread"
-  = f.button :submit
+  = f.input :content, input_html: { class: 'lgarea',maxlength: 5 }, label: false, placeholder: "Add Reaction"
+  %br/
+  = f.button :submit,"Create Reaction",class: 'button3'
+  %br/
+  %br/
+  %br/

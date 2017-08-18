@@ -15,11 +15,12 @@
  */
 
 $maincolour:#00E2FF;
-$secondcolour:gray;
+$secondcolour:#E9E9E9;
 
 body{
   font-family: 'Open Sans', sans-serif;
   margin:0;
+  background:#202025;
 }
 
 
@@ -44,7 +45,7 @@ body{
 	    margin-top:70px;
 	    text-transform:uppercase;
 	    font-size:30px;
-	    color:gray;
+	    color:#E9E9E9;
 	}
 }
 
@@ -56,7 +57,7 @@ body{
 	    margin-top:70px;
 	    text-transform:uppercase;
 	    font-size:30px;
-	    color:gray;
+	    color:#E9E9E9;
 	}
 }
 
@@ -68,7 +69,20 @@ body{
 	    margin-top:70px;
 	    text-transform:uppercase;
 	    font-size:30px;
-	    color:gray;
+	    color:#E9E9E9;
+	}
+}
+
+.wrapper4{
+  width: 60%;
+  position:absolute;
+  left:10%;
+	margin-top:100px;
+	h1{
+	    margin-top:70px;
+	    text-transform:uppercase;
+	    font-size:30px;
+	    color:#E9E9E9;
 	}
 }
 
@@ -118,14 +132,14 @@ h1, h2, h3, h4, h5, h6 {
 .button {
 	outline: none;
 	background: transparent;
-	color:$maincolour;
+	color:#ffffff;
 	text-decoration:none;
-	border: 1px solid $maincolour;
+	border: 1px solid #E4E4E4;
 	padding: .7em 1.5em;
 	border-radius: 1.5em;
 	&:hover {
 		border: 1px solid $secondcolour;
-		color: $secondcolour;
+		color: #E4E4E4;
 
 	}
 }
@@ -133,9 +147,9 @@ h1, h2, h3, h4, h5, h6 {
 .button3{
 	outline: none;
 	background: transparent;
-	color:$maincolour;
+	color:#ffffff;
 	text-decoration:none;
-	border: 1px solid $maincolour;
+	border: 1px solid #E4E4E4;
 	padding: .8em 1.5em;
 	font-size:17px;
 	border-radius: 1.5em;
@@ -151,7 +165,7 @@ h1, h2, h3, h4, h5, h6 {
 	background: transparent;
 	color:#ffffff;
 	text-decoration:none;
-	border: 1px solid #ffffff;
+	border: 1px solid #E4E4E4;
 	padding: .7em 1.5em;
 	border-radius: 1.5em;
 	&:hover {
@@ -161,24 +175,28 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
+
+
 .logo{
   background: transparent;
   height: 40px;
   width: 40px;
-  border: 5px solid #6CE9FF;
-  border-radius: 17px;
+  border: 4px solid #ffffff;
+  border-radius: 12px;
   position: absolute;
   top:5%;
   left: 3%;
   position:fixed;
+  z-index:1;
   .dot{
-    background: #6CE9FF;
+    background: #ffffff;
     height: 10px;
     width: 10px;
     border-radius: 100px;
     position: absolute;
     left: 35%;
     top:40%;
+    z-index:1;
   }
 }
 
@@ -187,7 +205,7 @@ h1, h2, h3, h4, h5, h6 {
 	float:right;
 	position: absolute;
     top:5%;
-    right: 3%;
+    right: 7%;
     position:fixed;
 	img{
 		border-radius:400px;
@@ -198,8 +216,10 @@ h1, h2, h3, h4, h5, h6 {
   float:right;
   position: absolute;
   top:5%;
-  right: 8%;
+  right: 11%;
   position:fixed;
+  color:#ffffff;
+  font-size:17px;
 }
 
 
@@ -210,6 +230,7 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 1;
   transition: opacity 0.6s;
   margin-bottom: 15px;
+  z-index: 1;
   .closebtn:hover {
     color: black;
   }
@@ -238,8 +259,8 @@ h1, h2, h3, h4, h5, h6 {
 	width:50%;
 	border-radius: 1.5em;
 	&:hover {
-		border: 1px solid $maincolour;
-		color: $maincolour;
+		border: 1px solid yellow;
+		color: yellow;
 
 	}
 }
@@ -247,7 +268,7 @@ h1, h2, h3, h4, h5, h6 {
 .lgarea{
   outline: none;
 	background: transparent;
-	color:$maincolour;
+	color:#E4E4E4;
 	text-decoration:none;
 	border: 1px solid $secondcolour;
 	padding: 5em 3.5em;
@@ -255,8 +276,8 @@ h1, h2, h3, h4, h5, h6 {
 	width:50%;
 	border-radius: 1.5em;
 	&:hover {
-		border: 1px solid $maincolour;
-		color: $maincolour;
+		border: 1px solid yellow;
+		color: yellow;
 
 	}
 }
@@ -272,8 +293,8 @@ h1, h2, h3, h4, h5, h6 {
 	width:50%;
 	border-radius: 1.5em;
 	&:hover {
-		border: 1px solid $maincolour;
-		color: $maincolour;
+		border: 1px solid yellow;
+		color: yellow;
 
 	}
 }
@@ -290,10 +311,10 @@ h1, h2, h3, h4, h5, h6 {
 	border: 1px solid $secondcolour;
 	padding: .7em 1.5em;
 	border-radius: 1.5em;
-	width:20%;
+	width:14%;
 	&:hover {
-		border: 1px solid $maincolour;
-		color: $maincolour;
+		border: 1px solid yellow;
+		color: yellow;
 
 	}
 	button{
@@ -302,8 +323,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .link{
-	color:gray;
+	color:#E9E9E9;
 	text-decoration:none;
+	&:hover{
+		color:yellow;
+	}
 }
 
 .area2{
@@ -317,8 +341,8 @@ h1, h2, h3, h4, h5, h6 {
 	width:30%;
 	border-radius: 1.5em;
 	&:hover {
-		border: 1px solid $maincolour;
-		color: $maincolour;
+		border: 1px solid yellow;
+		color: yellow;
 
 	}
 }
@@ -332,14 +356,14 @@ h1, h2, h3, h4, h5, h6 {
   border:0;
   outline: none;
   background-color: transparent;
-  color: grey;
+  color: #ffffff;
   cursor: pointer;
   padding: 17px;
   font-size:25px;
 }
 
 #myBtn:hover {
-  color:#00E2FF;
+  color:lightgray;
 }
 
 #help {
@@ -361,3 +385,51 @@ h1, h2, h3, h4, h5, h6 {
   color:#00E2FF;
 }
 
+.hide{
+  visibility: hidden;
+}
+
+
+
+
+ #search{
+ 	    position:absolute;
+      background:transparent;
+      border:0;
+      border-radius:10px;
+      padding:40px;
+      color:#ffffff;
+      top:3%;
+      left: 26%;
+      font-size:20px;
+      width:50%;
+  }
+  .searchbutton{
+      padding:30px;
+      border-radius:10px;
+      background:gray;
+      border:0;
+      position:absolute;
+      color:#ffffff;
+      top:3%;
+      left: 50%;
+  }
+  .searchbutton:hover{
+      background:#ffd680;
+  }
+  
+  .searchtag{
+  	  position:absolute;
+      color:#ffffff;
+      top:5%;
+      left: 20%;
+      font-size:20px;
+  }
+  
+.hrs{
+	border-color:#ffffff;
+	position:absolute;
+  color:#ffffff;
+  top:3.5%;
+  left: 25%;
+}

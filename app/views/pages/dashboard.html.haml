@@ -1,5 +1,9 @@
-.logo
-  .dot
+= link_to root_path do
+  .logo
+    .dot
+      
+
+
 
 .inline
   = link_to('Logout', destroy_creator_session_path, method: :delete, class: 'button', id:'logout')
@@ -8,34 +12,53 @@
 .inline  
   = link_to 'New Kapp', new_kapp_path, class: 'button', id:'new'
 
-.wrapper2
+.header
+  = image_tag current_creator.profile.url(:medium)
   %h1
-    #{current_creator.name} dashboard
-  %hr.hr
-  - if @kapp.blank?
-    %h2.colour.top You have no kapps why not create one ?
-#posts
-  - @kapp.each do |kapp|
-    .post
-      .post_image
-        = link_to (image_tag kapp.thumbnail.url(:medium)), kapp
-      .post_content
-        .title
-          %h2= link_to kapp.title, kapp
-          %br/
-          = time_ago_in_words(kapp.created_at)
-          ago 
+    = current_creator.name
 
-  .stats
-    %h1.colour.uppercase Stats
-    %hr.long
-    %br/
-    %br/
-    %h2.colour
-      Joined #{current_creator.created_at}
-    %h2.colour
-      You have #{@kapp.count} kapps
-      
+
+- if @kapp.blank?
+  %h2.colour.top You have no kapps why not create one ?
+
+.show    
+  #posts
+    .wrapper
+      %h1.kcount= pluralize(Kapp.count, "Kapp")
+      %br/
+      %br/
+      %br/
+      %br/
+    - @kapp.each do |kapp|
+      .post
+        .post_image
+          = link_to (image_tag kapp.thumbnail.url(:medium)), kapp
+        .post_content
+          - if kapp.creator.pro == true
+            %h1.pro Pro
+          - else
+            %h1.pro.hide Pro
+            
+          .title
+            %h2= link_to kapp.title, kapp
+            %br/
+            = link_to kapp.category.name, kapps_path(category: kapp.category.name), class: 'category'
+            %br/
+            %p.username
+              = time_ago_in_words(kapp.created_at)
+              ago
+              %br/
+              %br/
+              %i.fa.fa-thumbs-o-up.datas
+                = kapp.get_likes.size
+              %i.fa.fa-thumbs-o-down.datas2
+                = kapp.get_dislikes.size 
+            %br/
+            %br/
+            %br/
+            %br/
+            %br/
+
 
 
 

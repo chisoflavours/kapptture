@@ -1,8 +1,9 @@
 class CommentsController < ApplicationController
     before_action :authenticate_creator!
+    before_action :find_comment, only: [:destroy]
     
     def create
-        @kapp = Kapp.find(params[:kapp_id])
+        @kapp = Kapp.friendly.find(params[:kapp_id])
         @comment = Comment.create(params[:comment].permit(:content))
         @comment.creator_id = current_creator.id
         @comment.kapp_id = @kapp.id
@@ -13,4 +14,6 @@ class CommentsController < ApplicationController
             render 'new'
         end
     end
+    
+
 end

@@ -7,7 +7,7 @@ class CreatorsController < ApplicationController
   end
   
   def show
-    @kapp = Kapp.where(creator_id: @creator)
+    @kapp = Kapp.where(creator_id: @creator).order("created_at DESC")
   end
   
 
@@ -19,7 +19,7 @@ class CreatorsController < ApplicationController
  end
 
  def creator_params
-   params.require(:creator).permit(:email,:name,:phone,:about,:dob,:avatar,:slug)
+   params.require(:creator).permit(:email,:name,:phone,:about,:dob,:avatar,:slug,:pro)
  end
     
 end

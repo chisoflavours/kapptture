@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       get "dislike", to: "kapps#downvote"
     end
     resources :comments
+    resources :ratees
   end
   get 'pages/about'
 end

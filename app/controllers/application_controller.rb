@@ -22,5 +22,9 @@ class ApplicationController < ActionController::Base
   
     devise_parameter_sanitizer.permit(:sign_up, keys: [:profile])
     devise_parameter_sanitizer.permit(:account_update, keys: [:profile])
+    
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:pro])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:pro])
+    
   end
 end

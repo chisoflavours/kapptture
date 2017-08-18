@@ -17,19 +17,31 @@
         .post_image
           = link_to (image_tag kapp.thumbnail.url(:medium)), kapp
         .post_content
+          - if kapp.creator.pro == true
+            %h1.pro Pro
+          - else
+            %h1.pro.hide Pro
           .title
             %h2= link_to kapp.title, kapp
             %br/
           = link_to kapp.category.name, kapps_path(category: kapp.category.name), class: 'category'
           %br/
           %br/
+          %i.fa.fa-thumbs-o-up.datas
+            = kapp.get_likes.size
+          %i.fa.fa-thumbs-o-down.datas2
+            = kapp.get_dislikes.size  
+          %br/
+          %br/
           %p.username
             Published by
-            = link_to kapp.creator.name, kapp.creator
+            = link_to kapp.creator.name, kapp.creator, class: 'name'
             %br/
             = time_ago_in_words(kapp.created_at)
             ago
+ 
 
 - if @kapp.blank?
   .wrapper
-    %h2.colour.center There are no Kapps in this category
+    %h2.colour.center There are no Kapps 
+

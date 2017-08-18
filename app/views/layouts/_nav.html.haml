@@ -2,6 +2,13 @@
   = link_to root_path do 
     .logo
       .dot
+
+  = form_tag(kapps_path, :method => "get", :id => 'form') do
+    %h1.searchtag Search
+    %hr.hrs{:size => "70", :width => ".1" }/
+
+    = text_field_tag  :search, params[:search], placeholder: "What are you looking for ?", :id => 'search', required: false 
+  
   - if creator_signed_in?  
     .dropdown
       .profileimg    
@@ -10,7 +17,7 @@
         = current_creator.name
       .dropdown-content
         = link_to('Logout', destroy_creator_session_path, method: :delete)
-        = link_to 'Settings', edit_creator_registration_path
+        = link_to 'Profile', edit_creator_registration_path
 
   - else
     .inline

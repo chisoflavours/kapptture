@@ -4,35 +4,21 @@
 .profile
   .inline
     = image_tag @creator.profile.url(:large)
+  - if @creator.pro == true
+    %h1.pros PRO
+    %br/
+    %br/
+    %br/
+    %br/
+    %br/
   .inline  
-    %h1= @creator.name
+    %h1= @creator.name 
+  %br/
   %p.about= @creator.about
   %p.count= pluralize(@creator.kapps.count, "Kapp")
 
 
 
-%br/
-%br/
-%br/
-%br/
-%br/
-%br/
-%br/
-%br/
-%br/
-%br/
-%br/
-%br/
-%br/
-%br/
-%br/
-%br/
-%br/
-%br/
-%br/
-%br/
-%br/
-%br/
 
 .show
   #posts
@@ -44,9 +30,16 @@
           .title
             %h2= link_to kapp.title, kapp
             %br/
-          %p.username
-            Published by
-            = link_to kapp.creator.name, kapp.creator
+            = link_to kapp.category.name, kapps_path(category: kapp.category.name), class: 'category'
             %br/
+            %br/
+            %i.fa.fa-thumbs-o-up.datas
+              = kapp.get_likes.size
+            %i.fa.fa-thumbs-o-down.datas2
+              = kapp.get_dislikes.size 
+            %br/
+            %br/
+          %p.username
+            Published 
             = time_ago_in_words(kapp.created_at)
             ago

@@ -3,6 +3,10 @@
 %br/
 %br/
 %br/
+%br/
+%br/
+%br/
+%br/
 .wrapper
   %h1.colour Log In
   %br/
@@ -11,9 +15,9 @@
     %br/
     = f.input :password, required: false, input_html: { class: 'area2' }, label: false, placeholder: "Password"
     %br/
-    = f.input :remember_me, as: :boolean if devise_mapping.rememberable? 
+    = f.input :remember_me, input_html: { class: 'tickbox' }, as: :boolean if devise_mapping.rememberable?
     %br/
-    = f.button :submit, "Log in", class: 'button' 
+    = f.button :submit, "Log in", class: 'button3' 
     %br/
     %br/
     %br/

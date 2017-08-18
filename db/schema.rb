@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170811134400) do
+ActiveRecord::Schema.define(version: 20170815174312) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20170811134400) do
     t.integer  "profile_file_size"
     t.datetime "profile_updated_at"
     t.string   "slug"
+    t.boolean  "pro"
   end
 
   add_index "creators", ["email"], name: "index_creators_on_email", unique: true
@@ -85,9 +86,21 @@ ActiveRecord::Schema.define(version: 20170811134400) do
     t.datetime "thumbnail_updated_at"
     t.integer  "category_id"
     t.string   "slug"
+    t.integer  "rating"
   end
 
   add_index "kapps", ["slug"], name: "index_kapps_on_slug", unique: true
+
+  create_table "ratees", force: :cascade do |t|
+    t.integer  "rate"
+    t.integer  "kapp_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "creator_id"
+  end
+
+  add_index "ratees", ["creator_id"], name: "index_ratees_on_creator_id"
+  add_index "ratees", ["kapp_id"], name: "index_ratees_on_kapp_id"
 
   create_table "votes", force: :cascade do |t|
     t.integer  "votable_id"

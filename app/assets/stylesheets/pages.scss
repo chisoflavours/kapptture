@@ -7,7 +7,9 @@
     right:0;
     position:fixed;
     top:5%;
-    margin-right:150px;
+    margin-right:100px;
+    border: solid 3px white;
+    z-index:1;
 }
 
 #new{
@@ -15,7 +17,9 @@
     right:0;
     position:fixed;
     top:5%;
-    margin-right:450px;
+    margin-right:400px;
+    border: solid 3px white;
+    z-index:1;
 }
 
 #profile{
@@ -23,7 +27,9 @@
     right:0;
     position:fixed;
     top:5%;
-    margin-right:300px;
+    margin-right:250px;
+    border: solid 3px white;
+    z-index:1;
 }
 
 .stats{
@@ -50,4 +56,9 @@
 
 .wrapper2{
     padding-top:100px;
+}
+
+.kcount{
+  color:#E9E9E9;
+  text-align:center;
 }

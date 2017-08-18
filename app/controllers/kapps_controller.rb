@@ -1,6 +1,7 @@
 class KappsController < ApplicationController
     before_action :find_kapp, only: [:show,:edit,:update,:destroy, :upvote, :downvote]
     before_action :authenticate_creator!, except: [:index, :show]
+    before_action :check_ownership, only: [:edit, :update,:destroy]
     
     def index
       if params[:category].blank?
@@ -9,10 +10,15 @@ class KappsController < ApplicationController
         @category_id = Category.find_by(name: params[:category]).id
         @kapp = Kapp.where(category_id: @category_id).order("RANDOM()")
       end
+      
+     if params[:search]
+       @kapp = Kapp.search(params[:search]).order("created_at DESC")
+     end
     end
     
     def show
         @comments = Comment.where(kapp_id: @kapp)
+        @ratees = Ratee.where(kapp_id: @kapp)
     end
     
     def new
@@ -55,13 +61,18 @@ class KappsController < ApplicationController
         redirect_to :back
     end
     
+    
     private
     
+    def check_ownership
+      redirect_to root_path, notice: 'This is not your kapp !' unless @kapp.creator_id == current_creator.id
+    end
+  
     def find_kapp
-        @kapp= Kapp.friendly.find(params[:id])
+        @kapp = Kapp.friendly.find(params[:id])
     end
     
     def kapp_params
-        params.require(:kapp).permit(:title, :description, :thumbnail, :category_id, :slug)
+        params.require(:kapp).permit(:title, :description, :thumbnail, :category_id, :slug, :rating)
     end
 end

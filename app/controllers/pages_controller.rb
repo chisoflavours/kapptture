@@ -5,4 +5,6 @@ class PagesController < ApplicationController
   def dashboard
     @kapp = Kapp.where(creator_id: current_creator)
   end
+  
+    
 end

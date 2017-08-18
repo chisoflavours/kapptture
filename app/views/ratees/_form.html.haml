@@ -1,0 +1,7 @@
+= simple_form_for([@kapp, @kapp.ratees.build]) do |f|
+  = f.input :rate, label: "Reply to thread", input_html: { class: 'lgarea' }, label: false, placeholder: "Rate"
+  %br/
+  = f.button :submit,class: 'button3'
+  %br/
+  %br/
+  %br/
